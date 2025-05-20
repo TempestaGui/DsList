@@ -25,22 +25,29 @@ public class Game {
 	@Column(name = "Game_year")//customizando o nome da coluna no banco
 	private Integer year;
 	private	String genre;
-	private String plataform;
+	private String platforms;
+	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	//metodo para que quando for gerado no banco de dados, seja gerado como texto e nao como varchar(255)
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
 	public Game(){	
 	}
 
-	public Game(long id, String title, Integer year, String genre, String plataform, String imgUrl,
+	public Game(long id, String title, Integer year, String genre, String platforms,Double score ,String imgUrl,
 			String shortDescription, String longDescription) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.genre = genre;
-		this.plataform = plataform;
+		this.platforms = platforms;
+		this.score = score;
 		this.imgUrl = imgUrl;
 		this.shortDescription = shortDescription;
 		this.longDescription = longDescription;
@@ -78,12 +85,12 @@ public class Game {
 		this.genre = genre;
 	}
 
-	public String getPlataform() {
-		return plataform;
+	public String getPlatforms() {
+		return platforms;
 	}
 
-	public void setPlataform(String plataform) {
-		this.plataform = plataform;
+	public void setPlatforms(String platforms) {
+		this.platforms = platforms;
 	}
 
 	public String getImgUrl() {
@@ -109,6 +116,15 @@ public class Game {
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
+	
+		public Double getScore() {
+		return score;
+	}
+
+	public void setScore(Double score) {
+		this.score = score;
+	}
+	
 
 	@Override
 	public int hashCode() {
@@ -126,7 +142,7 @@ public class Game {
 		Game other = (Game) obj;
 		return id == other.id;
 	}
-	
-	
+
+
 	
 }
