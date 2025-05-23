@@ -2,8 +2,18 @@ package com.Projeto.DsList.entities;
 
 import java.util.Objects;
 
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+//encapsular dois atributos em uma classe so 
+@Embeddable
 public class BelongingPK {
+	
+	@ManyToOne
+	@JoinColumn(name = "Game_id")
 	private Game game;
+	@ManyToOne
+	@JoinColumn(name = "List_id")
 	private GameList list;
 	
 	public BelongingPK() {
