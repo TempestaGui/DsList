@@ -12,8 +12,8 @@ import com.Projeto.DsList.entities.Game;
 import com.Projeto.DsList.service.GameService;
 
 //implementar a api
-
 @RestController
+
 //configurando o caminho que vai ser respondido na api
 @RequestMapping(value = "/Games")
 
