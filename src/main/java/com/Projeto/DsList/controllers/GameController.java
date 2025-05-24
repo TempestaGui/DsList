@@ -28,7 +28,7 @@ public class GameController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public GameDTO findById(@PathVariable Long id){
+	public GameDTO findById(@PathVariable Long id){ //PathVariable serve para pegar um valor que está na URL e usá-lo como parâmetro no método do controller.
 		GameDTO result = gameService.findById(id);
 		return result;
 	}
