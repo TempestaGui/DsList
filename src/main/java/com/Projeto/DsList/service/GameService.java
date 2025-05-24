@@ -11,8 +11,8 @@ import com.Projeto.DsList.repositories.GameRepository;
 
 //registrar um componente, injetar um componente no outro
 @Service	
-
 public class GameService {
+	
 	//injetando uma instancia do gameRepository no gameService
 	@Autowired
 	private GameRepository gameRepository;
